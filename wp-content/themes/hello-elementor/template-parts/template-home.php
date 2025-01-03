@@ -5,7 +5,7 @@
  * Description: A custom template for the home page with ACF integration.
  */
 ?>
-<?php include get_template_directory() . '/custom-header.php'; ?>
+<?php include get_template_directory() . '/acf-template/custom-header.php'; ?>
 <main id="page-home" class="home">
    <section class="home__hero c-white hero p-r">
       <div class="home__hero__bg hero__bg bg-img absolute-full" data-kira-item="parallaxTop"
@@ -386,4 +386,4 @@
 </main>
 
 
-<?php include get_template_directory() . '/custom-footer.php'; ?>
+<?php include get_template_directory() . '/acf-template/custom-footer.php'; ?>
