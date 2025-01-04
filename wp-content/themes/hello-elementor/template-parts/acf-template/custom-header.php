@@ -1,4 +1,4 @@
-<?php include get_template_directory() . '/custom-head.php'; ?>
+<?php require_once get_template_directory() . '/custom-head.php'; ?>
 
 <header id="header" data-kira-timeline="onload">
     <div class="header-container" data-kira-item="fadeInUp.stagger.sm">
