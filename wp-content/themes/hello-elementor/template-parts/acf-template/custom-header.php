@@ -23,13 +23,26 @@ if (file_exists($custom_head_path)) {
         <!-- Navigation Menu -->
         <nav class="item-nav">
             <?php
+            // Check the current language (assuming you are using Polylang)
+            $current_lang = pll_current_language();
+
+            // Set the menu location based on the language
+            if ($current_lang == 'ar') {
+                // Arabic Menu
+                $menu_location = 'main_menu_ar'; // Set the menu location for Arabic
+            } else {
+                // English Menu
+                $menu_location = 'main_menu_en'; // Set the menu location for English
+            }
+
+            // Output the menu based on the language
             wp_nav_menu(array(
-                'theme_location' => 'primary_menu', // Registered menu location
+                'theme_location' => $menu_location, // Dynamic menu location
                 'container' => false,
                 'menu_class' => 'item-menu',
                 'fallback_cb' => false,
                 'depth' => 2, // Support for submenus
-                'walker' => new WP_Bootstrap_Navwalker(), // Optional for custom walker
+                'walker' => new WP_Bootstrap_Navwalker(), // Optional custom walker
             ));
             ?>
         </nav>
