@@ -23,17 +23,15 @@ if (file_exists($custom_head_path)) {
         <!-- Navigation Menu -->
         <nav class="item-nav">
             <?php
-            // Check if Polylang function exists to avoid errors when it's not available
-            if (function_exists('pll_current_language')) {
-                $current_lang = pll_current_language(); // Get the current language
-            } else {
-                $current_lang = 'en'; // Fallback to English if Polylang is not available
-            }
+            // Check the current language (assuming you are using Polylang)
+            $current_lang = pll_current_language();
 
             // Set the menu location based on the language
             if ($current_lang == 'ar') {
+                // Arabic Menu
                 $menu_location = 'main_menu_ar'; // Set the menu location for Arabic
             } else {
+                // English Menu
                 $menu_location = 'main_menu_en'; // Set the menu location for English
             }
 
@@ -44,10 +42,11 @@ if (file_exists($custom_head_path)) {
                 'menu_class' => 'item-menu',
                 'fallback_cb' => false,
                 'depth' => 2, // Support for submenus
-                'walker' => new WP_Bootstrap_Navwalker(), // Optional custom walker
+                // No custom walker for Bootstrap here
             ));
             ?>
         </nav>
+
 
 
         <!-- Language Switcher -->
