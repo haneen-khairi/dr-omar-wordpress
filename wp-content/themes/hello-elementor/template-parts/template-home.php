@@ -5,8 +5,8 @@
  * Description: A custom template for the home page with ACF integration.
  */
 ?>
-<?php // require_once get_template_directory() . '/acf-template/custom-header.php';
-?>
+<?php get_template_part('acf-template/custom-header'); ?>
+
 
 <main id="page-home" class="home">
    <section class="home__hero c-white hero p-r">
@@ -387,6 +387,4 @@
    </section>
 </main>
 
-
-<?php include get_template_directory() . '/acf-template/custom-footer.php';
-?>
+<?php get_template_part('acf-template/custom-footer'); ?>
