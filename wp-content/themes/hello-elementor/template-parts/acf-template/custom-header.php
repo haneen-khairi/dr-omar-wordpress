@@ -1,12 +1,3 @@
-<!-- <?php
-        $custom_head_path = get_template_directory() . '/template-parts/acf-template/custom-head.php';
-        if (file_exists($custom_head_path)) {
-            require_once $custom_head_path;
-        } else {
-            echo 'Custom header file not found!';
-        }
-        ?> -->
-
 <header id="header" data-kira-timeline="onload">
     <div class="header-container" data-kira-item="fadeInUp.stagger.sm">
         <!-- Logo Section -->
