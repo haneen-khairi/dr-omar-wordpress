@@ -23,15 +23,17 @@ if (file_exists($custom_head_path)) {
         <!-- Navigation Menu -->
         <nav class="item-nav">
             <?php
-            // Check the current language (assuming you are using Polylang)
-            $current_lang = pll_current_language();
+            // Check if Polylang function exists to avoid errors when it's not available
+            if (function_exists('pll_current_language')) {
+                $current_lang = pll_current_language(); // Get the current language
+            } else {
+                $current_lang = 'en'; // Fallback to English if Polylang is not available
+            }
 
             // Set the menu location based on the language
             if ($current_lang == 'ar') {
-                // Arabic Menu
                 $menu_location = 'main_menu_ar'; // Set the menu location for Arabic
             } else {
-                // English Menu
                 $menu_location = 'main_menu_en'; // Set the menu location for English
             }
 
@@ -46,6 +48,7 @@ if (file_exists($custom_head_path)) {
             ));
             ?>
         </nav>
+
 
         <!-- Language Switcher -->
         <div class="lang-container" data-stagger-item>
