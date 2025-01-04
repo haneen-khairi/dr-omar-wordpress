@@ -5,9 +5,9 @@
  * Description: A custom template for the home page with ACF integration.
  */
 ?>
- 
+
 <?php
-$custom_head_path = get_template_directory() . 'template-parts/acf-template/custom-header';
+$custom_head_path = get_template_directory() . '/template-parts/acf-template/custom-header';
 if (file_exists($custom_head_path)) {
    require_once $custom_head_path;
 } else {
