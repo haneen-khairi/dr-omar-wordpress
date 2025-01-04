@@ -25,8 +25,8 @@
     <link rel="shortcut icon" href="<?php echo get_field('favicon') ?: 'assets/assets/img/fav.ico'; ?>" type="image/x-icon" />
 
     <!-- Preloads -->
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/assets/css/app.css" as="style" />
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/assets/js/app.js" as="script" />
+    <link rel="prefetch" href="<?php echo get_template_directory_uri(); ?>/assets/assets/css/app.css" as="style" />
+    <link rel="prefetch" href="<?php echo get_template_directory_uri(); ?>/assets/assets/js/app.js" as="script" />
 
     <!-- Canonical Link -->
     <link rel="canonical" href="<?php echo esc_url(get_permalink()); ?>" />
