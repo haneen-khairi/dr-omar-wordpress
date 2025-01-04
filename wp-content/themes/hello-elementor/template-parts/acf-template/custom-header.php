@@ -1,5 +1,5 @@
 <?php
-$custom_head_path = get_template_directory() . '/custom-head.php';
+$custom_head_path = get_template_directory() . '/template-parts/acf-template/custom-head.php';
 if (file_exists($custom_head_path)) {
     require_once $custom_head_path;
 } else {
