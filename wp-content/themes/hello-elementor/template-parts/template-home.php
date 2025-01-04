@@ -5,9 +5,15 @@
  * Description: A custom template for the home page with ACF integration.
  */
 ?>
-<?php // include get_template_part('template-parts/acf-template/custom-header');
+ 
+<?php
+$custom_head_path = get_template_directory() . 'template-parts/acf-template/custom-header';
+if (file_exists($custom_head_path)) {
+   require_once $custom_head_path;
+} else {
+   echo 'Custom header file not found!';
+}
 ?>
-
 <main id="page-home" class="home">
    <section class="home__hero c-white hero p-r">
       <div class="home__hero__bg hero__bg bg-img absolute-full" data-kira-item="parallaxTop"
