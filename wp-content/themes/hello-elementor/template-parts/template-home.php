@@ -5,8 +5,11 @@
  * Description: A custom template for the home page with ACF integration.
  */
 ?>
-<?php get_template_part('acf-template/custom-header'); ?>
-<!-- haneen -->
+<?php if (locate_template('acf-template/custom-header.php')) {
+   get_template_part('acf-template/custom-header');
+} else {
+   echo 'Custom header template not found.';
+} ?>
 
 <main id="page-home" class="home">
    <section class="home__hero c-white hero p-r">
