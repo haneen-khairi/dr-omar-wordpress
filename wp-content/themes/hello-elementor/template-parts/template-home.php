@@ -393,5 +393,11 @@ if (file_exists($custom_head_path)) {
    </section>
 </main>
 
-<?php include get_template_part('template-parts/acf-template/custom-footer');
+<?php
+$custom_footer_path = get_template_directory() . 'template-parts/acf-template/custom-footer.php';
+if (file_exists($custom_footer_path)) {
+   require_once $custom_footer_path;
+} else {
+   echo 'Custom footer file not found!';
+}
 ?>
