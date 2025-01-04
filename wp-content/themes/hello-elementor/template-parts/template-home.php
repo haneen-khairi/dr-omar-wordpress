@@ -5,7 +5,7 @@
  * Description: A custom template for the home page with ACF integration.
  */
 ?>
-<?php include get_template_part('template-parts/acf-template/custom-header');
+<?php // include get_template_part('template-parts/acf-template/custom-header');
 ?>
 
 <main id="page-home" class="home">

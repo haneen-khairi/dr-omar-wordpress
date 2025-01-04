@@ -21,12 +21,55 @@ if (file_exists($custom_head_path)) {
         </div>
 
         <!-- Navigation Menu -->
+        <nav class="item-nav">
+            <?php
+            // Check the current language (assuming you are using Polylang)
+            $current_lang = pll_current_language();
 
+            // Set the menu location based on the language
+            if ($current_lang == 'ar') {
+                // Arabic Menu
+                $menu_location = 'main_menu_ar'; // Set the menu location for Arabic
+            } else {
+                // English Menu
+                $menu_location = 'main_menu_en'; // Set the menu location for English
+            }
+
+            // Output the menu based on the language
+            wp_nav_menu(array(
+                'theme_location' => $menu_location, // Dynamic menu location
+                'container' => false,
+                'menu_class' => 'item-menu',
+                'fallback_cb' => false,
+                'depth' => 2, // Support for submenus
+                // No custom walker for Bootstrap here
+            ));
+            ?>
+        </nav>
 
 
 
         <!-- Language Switcher -->
-
+        <div class="lang-container" data-stagger-item>
+            <div class="menu-lang">
+                <?php
+                $current_lang = pll_current_language();
+                $languages = pll_the_languages(array('raw' => 1));
+                ?>
+                <span class="active menu-lang__current"><?php echo strtoupper($current_lang); ?></span>
+                <ul>
+                    <?php foreach ($languages as $lang): ?>
+                        <?php if (!$lang['current_lang']): ?>
+                            <li>
+                                <a class="menu-lang__item" href="<?php echo esc_url($lang['url']); ?>">
+                                    <?php echo strtoupper($lang['slug']); ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
 
         <!-- Mobile Menu Toggle -->
         <button class="btn-menu" aria-label="Menu" data-stagger-item>
@@ -40,3 +83,49 @@ if (file_exists($custom_head_path)) {
 </header>
 
 <!-- Mobile Menu -->
+
+<div id="mobile-menu">
+    <div class="item-container container md-up-ta-c">
+        <ul>
+            <?php
+            // Generate the mobile menu dynamically
+            wp_nav_menu(array(
+                'theme_location' => 'mobile_menu', // Register a new menu location for mobile
+                'container' => false,
+                'items_wrap' => '%3$s', // Wrap only the <li> items
+                'fallback_cb' => false,
+                'depth' => 2, // Support for submenus
+            ));
+            ?>
+
+            <!-- Language Switcher for Mobile -->
+            <li class="lang-container" data-stagger-item>
+                <div class="menu-lang">
+                    <?php
+                    // Get current language
+                    $current_lang = pll_current_language();
+
+                    // Get list of available languages
+                    $languages = pll_the_languages(array('raw' => 1));
+                    ?>
+                    <span class="active menu-lang__current"><?php echo strtoupper($current_lang); ?></span>
+                    <ul>
+                        <?php if (!empty($languages)): ?>
+                            <?php foreach ($languages as $lang): ?>
+                                <?php if (!$lang['current_lang']): ?>
+                                    <li>
+                                        <a class="menu-lang__item" href="<?php echo esc_url($lang['url']); ?>">
+                                            <?php echo strtoupper($lang['slug']); ?>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <li>No languages available</li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
