@@ -390,4 +390,4 @@
    </section>
 </main>
 
-<?php get_template_part('acf-template/custom-footer'); ?>
+<?php include get_template_part('template-parts/acf-template/custom-footer'); ?>
