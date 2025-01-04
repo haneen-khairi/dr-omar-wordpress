@@ -387,4 +387,5 @@
    </section>
 </main>
 
-<?php include get_template_part('template-parts/acf-template/custom-footer'); ?>
+<?php // include get_template_part('template-parts/acf-template/custom-footer'); 
+?>
