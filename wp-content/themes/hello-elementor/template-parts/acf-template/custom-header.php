@@ -26,26 +26,7 @@ if (file_exists($custom_head_path)) {
 
 
         <!-- Language Switcher -->
-        <div class="lang-container" data-stagger-item>
-            <div class="menu-lang">
-                <?php
-                $current_lang = pll_current_language();
-                $languages = pll_the_languages(array('raw' => 1));
-                ?>
-                <span class="active menu-lang__current"><?php echo strtoupper($current_lang); ?></span>
-                <ul>
-                    <?php foreach ($languages as $lang): ?>
-                        <?php if (!$lang['current_lang']): ?>
-                            <li>
-                                <a class="menu-lang__item" href="<?php echo esc_url($lang['url']); ?>">
-                                    <?php echo strtoupper($lang['slug']); ?>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </div>
+
 
         <!-- Mobile Menu Toggle -->
         <button class="btn-menu" aria-label="Menu" data-stagger-item>
