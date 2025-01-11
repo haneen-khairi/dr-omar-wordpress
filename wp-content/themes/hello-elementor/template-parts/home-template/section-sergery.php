@@ -23,12 +23,21 @@ if ($surgeries_section): ?>
                                 href="<?php echo esc_url($surgery_group['surgery_button_link'] ?? '#'); ?>">
                                 <div class="lazy-image home__surgery__img" style="padding-bottom: 160%">
                                     <?php if (!empty($surgery_group['surgery_image'])): ?>
-                                        <img
-                                            src="<?php echo esc_url($surgery_group['surgery_image']['url']); ?>"
-                                            alt="<?php echo esc_attr($surgery_group['surgery_image']['alt'] ?? 'Surgery Image'); ?>"
-                                            class="lazy-image__img"
-                                            width="814"
-                                            height="1300" />
+                                        <?php if (!empty($surgery_group['surgery_image'])):
+                                            $image = $surgery_group['surgery_image'];
+                                        ?>
+                                            <img
+                                                src="<?php echo esc_url($image['url']); ?>"
+                                                data-src="<?php echo esc_url($image['url']); ?>"
+                                                data-srcset="<?php echo esc_url($image['sizes']['medium']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w"
+                                                sizes="(max-width: 639px) 407px, 814px"
+                                                width="814"
+                                                height="1300"
+                                                alt="<?php echo esc_attr($image['alt'] ?? 'Surgery Image'); ?>"
+                                                class="lazy-image__img entered loaded"
+                                                data-ll-status="loaded"
+                                                srcset="<?php echo esc_url($image['sizes']['medium']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w" />
+                                        <?php endif; ?>
                                     <?php endif; ?>
                                 </div>
                                 <div class="home__surgery__metas p-a w-100">
