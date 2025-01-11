@@ -25,87 +25,14 @@ if (file_exists($custom_head_path)) {
       echo 'Custom home banner file not found!';
    }
    ?>
-   <section class="home__surgery ta-c p-r c-white">
-      <div class="container">
-         <h2 class="home__surgery__title title-xxl tt-u mb-md md-up-mb-xl">
-            Lorem Lorem h2
-         </h2>
-         <div class="row">
-            <div class="col-md-6 mb-md">
-               <a class="home__surgery__page d-b p-r o-h" target="_blank" href="#">
-                  <div id="img-15702" class="lazy-image home__surgery__img" style="padding-bottom: 160%">
-                     <img
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1300'%3E%3C/svg%3E"
-                        data-src="assets/img/homepage/homepage3.jpg"
-                        data-srcset="assets/img/homepage/homepage3.jpg 407w, assets/img/homepage/homepage3.jpg 814w"
-                        sizes="(max-width: 639px) 407px, 814px" width="814" height="1300" alt=""
-                        class="lazy-image__img" />
-                  </div>
-                  <div class="home__surgery__metas p-a w-100">
-                     <h3 class="home__surgery__subtitle title-xxl mb-md">
-                        Face
-                     </h3>
-                     <span class="home__surgery__link btn">Discover</span>
-                  </div>
-               </a>
-            </div>
-            <div class="col-md-6 mb-md">
-               <a class="home__surgery__page d-b p-r o-h" target="_blank" href="#">
-                  <div id="img-15702" class="lazy-image home__surgery__img" style="padding-bottom: 160%">
-                     <img
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1300'%3E%3C/svg%3E"
-                        data-src="assets/img/homepage/homepage5.jpg"
-                        data-srcset="assets/img/homepage/homepage5.jpg 407w, assets/img/homepage/homepage5.jpg 814w"
-                        sizes="(max-width: 639px) 407px, 814px" width="814" height="1300" alt=""
-                        class="lazy-image__img" />
-                  </div>
-                  <div class="home__surgery__metas p-a w-100">
-                     <h3 class="home__surgery__subtitle title-xxl mb-md">
-                        loerm
-                     </h3>
-                     <span class="home__surgery__link btn">Discover</span>
-                  </div>
-               </a>
-            </div>
-            <div class="col-md-6 mb-md">
-               <a class="home__surgery__page d-b p-r o-h" target="_blank" href="#">
-                  <div id="img-281059" class="lazy-image home__surgery__img" style="padding-bottom: 160%">
-                     <img
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1300'%3E%3C/svg%3E"
-                        data-src="assets/img/homepage/homepage2.jpg"
-                        data-srcset="assets/img/homepage/homepage2.jpg 407w, assets/img/homepage/homepage2.jpg 814w"
-                        sizes="(max-width: 639px) 407px, 814px" width="814" height="1300" alt=""
-                        class="lazy-image__img" />
-                  </div>
-                  <div class="home__surgery__metas p-a w-100">
-                     <h3 class="home__surgery__subtitle title-xxl mb-md">
-                        Corps
-                     </h3>
-                     <span class="home__surgery__link btn">Discover</span>
-                  </div>
-               </a>
-            </div>
-            <div class="col-md-6 mb-md">
-               <a class="home__surgery__page d-b p-r o-h" target="_blank" href="#">
-                  <div id="img-601434" class="lazy-image home__surgery__img" style="padding-bottom: 160%">
-                     <img
-                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 814 1300'%3E%3C/svg%3E"
-                        data-src="assets/img/homepage/homepage.jpg"
-                        data-srcset="assets/img/homepage/homepage.jpg 407w, assets/img/homepage/homepage.jpg 814w"
-                        sizes="(max-width: 639px) 407px, 814px" width="814" height="1300" alt=""
-                        class="lazy-image__img" />
-                  </div>
-                  <div class="home__surgery__metas p-a w-100">
-                     <h3 class="home__surgery__subtitle title-xxl mb-md">
-                        Body
-                     </h3>
-                     <span class="home__surgery__link btn">Discover</span>
-                  </div>
-               </a>
-            </div>
-         </div>
-      </div>
-   </section>
+   <?php
+   $custom_sergery_path = get_template_directory() . '/template-parts/home-template/section-sergery.php';
+   if (file_exists($custom_sergery_path)) {
+      require_once $custom_sergery_path;
+   } else {
+      echo 'Custom home banner file not found!';
+   }
+   ?>
    <section class="home__medecine p-r o-h" data-kira-timeline>
       <div class="container ta-c">
          <h2 class="home__medecine__title title-xxl tt-u mb-md md-up-mb-xl">
