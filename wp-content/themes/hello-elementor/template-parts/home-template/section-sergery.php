@@ -28,14 +28,14 @@ if ($surgeries_section): ?>
                                         <img
                                             src="<?php echo esc_url($image['url']); ?>"
                                             data-src="<?php echo esc_url($image['url']); ?>"
-                                            data-srcset="<?php echo esc_url($image['sizes']['medium']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w"
+                                            data-srcset="<?php echo esc_url($image['url']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w"
                                             sizes="(max-width: 639px) 407px, 814px"
                                             width="814"
                                             height="1300"
                                             alt="<?php echo esc_attr($image['alt'] ?? 'Surgery Image'); ?>"
                                             class="lazy-image__img entered loaded"
                                             data-ll-status="loaded"
-                                            srcset="<?php echo esc_url($image['sizes']['medium']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w" />
+                                            srcset="<?php echo esc_url($image['url']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w" />
                                     <?php endif; ?>
                                 </div>
                                 <div class="home__surgery__metas p-a w-100">
