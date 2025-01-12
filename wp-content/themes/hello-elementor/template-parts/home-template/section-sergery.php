@@ -17,26 +17,28 @@ if ($surgeries_section): ?>
                     // Check if the surgery group exists
                     if (!empty($surgeries_section["surgeries_$i"])):
                         $surgery_group = $surgeries_section["surgeries_$i"]; ?>
+
                         <div class="col-md-6 mb-md">
                             <a class="home__surgery__page d-b p-r o-h"
                                 target="_blank"
                                 href="<?php echo esc_url($surgery_group['surgery_button_link'] ?? '#'); ?>">
                                 <div class="lazy-image home__surgery__img" style="padding-bottom: 160%">
-                                    <?php if (!empty($surgery_group['surgery_image'])):
+                                    <?php
+                                    // Check if the group data exists and is valid
+                                    if (isset($surgery_group['surgery_image']) && is_array($surgery_group['surgery_image'])) {
                                         $image = $surgery_group['surgery_image'];
                                     ?>
                                         <img
-                                            src="<?php echo esc_url($image['url']); ?>"
-                                            data-src="<?php echo esc_url($image['url']); ?>"
-                                            data-srcset="<?php echo esc_url($image['url']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w"
-                                            sizes="(max-width: 639px) 407px, 814px"
+                                            src="<?php echo esc_url($image['url'] ?? ''); ?>"
+                                            data-src="<?php echo esc_url($image['url'] ?? ''); ?>"
+                                            alt="<?php echo esc_attr($image['alt'] ?? 'Surgery Image'); ?>"
                                             width="814"
                                             height="1300"
-                                            alt="<?php echo esc_attr($image['alt'] ?? 'Surgery Image'); ?>"
-                                            class="lazy-image__img entered loaded"
-                                            data-ll-status="loaded"
-                                            srcset="<?php echo esc_url($image['url']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w" />
-                                    <?php endif; ?>
+                                            class="lazy-image__img entered loaded" />
+                                    <?php } else { ?>
+                                        <p>No image available for this surgery.</p>
+                                    <?php } ?>
+
                                 </div>
                                 <div class="home__surgery__metas p-a w-100">
                                     <?php if (!empty($surgery_group['surgery_subtitle'])): ?>
