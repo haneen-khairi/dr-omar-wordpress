@@ -14,18 +14,19 @@ if ($surgeries_section): ?>
                 <?php
                 // Loop through possible surgeries (assuming 1 to 4)
                 for ($i = 1; $i <= 4; $i++):
-                    // Check if the surgery group exists
-                    if (!empty($surgeries_section["surgeries_$i"])):
-                        $surgery_group = $surgeries_section["surgeries_$i"]; ?>
+                    // Check if the surgery group exists and is an array
+                    if (!empty($surgeries_section["surgeries_$i"]) && is_array($surgeries_section["surgeries_$i"])):
+                        $surgery_group = $surgeries_section["surgeries_$i"];
 
+                        // Extract image data safely
+                        $image = $surgery_group['surgery_image'] ?? null;
+                ?>
                         <div class="col-md-6 mb-md">
                             <a class="home__surgery__page d-b p-r o-h"
                                 target="_blank"
                                 href="<?php echo esc_url($surgery_group['surgery_button_link'] ?? '#'); ?>">
                                 <div class="lazy-image home__surgery__img" style="padding-bottom: 160%">
-                                    <?php if (!empty($surgery_group['surgery_image'])):
-                                        $image = $surgery_group['surgery_image'];
-                                    ?>
+                                    <?php if (is_array($image) && !empty($image['url'])): ?>
                                         <img
                                             src="<?php echo esc_url($image['url']); ?>"
                                             data-src="<?php echo esc_url($image['url']); ?>"
