@@ -15,8 +15,8 @@ if ($surgeries_section): ?>
                 // Loop through possible surgeries (assuming 1 to 4)
                 for ($i = 1; $i <= 4; $i++):
                     // Check if the surgery group exists and is an array
-                    if (!empty($surgeries_section["surgeries_$i"]) && is_array($surgeries_section["surgeries_$i"])):
-                        $surgery_group = $surgeries_section["surgeries_$i"];
+                    if (!empty($surgeries_section[`surgeries_$i`]) && is_array($surgeries_section[`surgeries_$i`])):
+                        $surgery_group = $surgeries_section[`surgeries_$i`];
 
                         // Extract image data safely
                         $image = $surgery_group['surgery_image'] ?? null;
