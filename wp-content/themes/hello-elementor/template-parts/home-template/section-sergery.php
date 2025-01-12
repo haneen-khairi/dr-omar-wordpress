@@ -14,7 +14,7 @@ if ($surgeries_section): ?>
                 $surgery_group_key = "surgeries_1";
                 if (!empty($surgeries_section[$surgery_group_key])):
                     $surgery = $surgeries_section[$surgery_group_key];
-                    $image = $surgery['surgery_image'] ?? null;
+                    $image = $surgery['surgery_image_1'] ?? null;
                     $subtitle = $surgery['surgery_subtitle'] ?? '';
                     $button_text = $surgery['surgery_button_text'] ?? 'Discover';
                     $button_link = $surgery['surgery_button_link'] ?? '#';
@@ -46,7 +46,7 @@ if ($surgeries_section): ?>
                 $surgery_group_key2 = "surgeries_2";
                 if (!empty($surgeries_section[$surgery_group_key2])):
                     $surgery2 = $surgeries_section[$surgery_group_key2];
-                    $image2 = $surgery2['surgery_image'] ?? null;
+                    $image2 = $surgery2['surgery_image_2'] ?? null;
                     $subtitle2 = $surgery2['surgery_subtitle'] ?? '';
                     $button_text2 = $surgery2['surgery_button_text'] ?? 'Discover';
                     $button_link2 = $surgery2['surgery_button_link'] ?? '#';
@@ -79,7 +79,7 @@ if ($surgeries_section): ?>
                 $surgery_group_key3 = "surgeries_3";
                 if (!empty($surgeries_section[$surgery_group_key3])):
                     $surgery3 = $surgeries_section[$surgery_group_key3];
-                    $image3 = $surgery3['surgery_image'] ?? null;
+                    $image3 = $surgery3['surgery_image_3'] ?? null;
                     $subtitle3 = $surgery3['surgery_subtitle'] ?? '';
                     $button_text3 = $surgery3['surgery_button_text'] ?? 'Discover';
                     $button_link3 = $surgery3['surgery_button_link'] ?? '#';
@@ -112,7 +112,7 @@ if ($surgeries_section): ?>
                 $surgery_group_key4 = "surgeries_4";
                 if (!empty($surgeries_section[$surgery_group_key4])):
                     $surgery4 = $surgeries_section[$surgery_group_key4];
-                    $image4 = $surgery4['surgery_image'] ?? null;
+                    $image4 = $surgery4['surgery_image_4'] ?? null;
                     $subtitle4 = $surgery4['surgery_subtitle'] ?? '';
                     $button_text4 = $surgery4['surgery_button_text'] ?? 'Discover';
                     $button_link4 = $surgery4['surgery_button_link'] ?? '#';
