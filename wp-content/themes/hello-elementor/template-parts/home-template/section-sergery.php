@@ -1,5 +1,5 @@
 <?php
-// Fetch the "Home Surgery Section" group field
+// Fetch the main group field
 $surgeries_section = get_field('home_surgery_section'); // Replace with your group field name
 
 if ($surgeries_section): ?>
@@ -12,44 +12,44 @@ if ($surgeries_section): ?>
             <?php endif; ?>
             <div class="row">
                 <?php
-                // Loop through possible surgeries (assuming 1 to 4)
+                // Loop through the four surgeries
                 for ($i = 1; $i <= 4; $i++):
-                    // Check if the surgery group exists and is an array
-                    if (!empty($surgeries_section[`surgeries_$i`]) && is_array($surgeries_section[`surgeries_$i`])):
-                        $surgery_group = $surgeries_section[`surgeries_$i`];
+                    $surgery_group_key = "surgeries_$i";
 
-                        // Extract image data safely
-                        $image = $surgery_group['surgery_image'] ?? null;
+                    // Ensure the group exists and has data
+                    if (!empty($surgeries_section[$surgery_group_key])):
+                        $surgery = $surgeries_section[$surgery_group_key];
 
-                        // Skip to the next iteration if the image is not valid
+                        // Extract individual fields from the group
+                        $image = $surgery['surgery_image'] ?? null;
+                        $subtitle = $surgery['surgery_subtitle'] ?? '';
+                        $button_text = $surgery['surgery_button_text'] ?? '';
+                        $button_link = $surgery['surgery_button_link'] ?? '#';
+
+                        // Skip if no image is provided
                         if (!is_array($image) || empty($image['url'])) continue;
                 ?>
                         <div class="col-md-6 mb-md">
                             <a class="home__surgery__page d-b p-r o-h"
                                 target="_blank"
-                                href="<?php echo esc_url($surgery_group['surgery_button_link'] ?? '#'); ?>">
+                                href="<?php echo esc_url($button_link); ?>">
                                 <div class="lazy-image home__surgery__img" style="padding-bottom: 160%">
                                     <img
                                         src="<?php echo esc_url($image['url']); ?>"
-                                        data-src="<?php echo esc_url($image['url']); ?>"
-                                        data-srcset="<?php echo esc_url($image['url']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w"
-                                        sizes="(max-width: 639px) 407px, 814px"
+                                        alt="<?php echo esc_attr($image['alt'] ?? 'Surgery Image'); ?>"
                                         width="814"
                                         height="1300"
-                                        alt="<?php echo esc_attr($image['alt'] ?? 'Surgery Image'); ?>"
-                                        class="lazy-image__img entered loaded"
-                                        data-ll-status="loaded"
-                                        srcset="<?php echo esc_url($image['url']); ?> 407w, <?php echo esc_url($image['url']); ?> 814w" />
+                                        class="lazy-image__img" />
                                 </div>
                                 <div class="home__surgery__metas p-a w-100">
-                                    <?php if (!empty($surgery_group['surgery_subtitle'])): ?>
+                                    <?php if (!empty($subtitle)): ?>
                                         <h3 class="home__surgery__subtitle title-xxl mb-md">
-                                            <?php echo esc_html($surgery_group['surgery_subtitle']); ?>
+                                            <?php echo esc_html($subtitle); ?>
                                         </h3>
                                     <?php endif; ?>
-                                    <?php if (!empty($surgery_group['surgery_button_text'])): ?>
+                                    <?php if (!empty($button_text)): ?>
                                         <span class="home__surgery__link btn">
-                                            <?php echo esc_html($surgery_group['surgery_button_text']); ?>
+                                            <?php echo esc_html($button_text); ?>
                                         </span>
                                     <?php endif; ?>
                                 </div>
