@@ -45,8 +45,7 @@
                     style="background-image: url('<?php the_field('left_image', 'section_home_medicine'); ?>');">
                 </div>
             </div>
-            <div
-                class="home__medicine__pushTop home__medicine__pushTop--right col-md-12 col-xl-7 h-100 bg-black c-white p-r">
+            <div class="home__medicine__pushTop home__medicine__pushTop--right col-md-12 col-xl-7 h-100 bg-black c-white p-r">
                 <div class="bg-cover absolute-full" data-kira-item="zoomOut"
                     style="background-image: url('<?php the_field('right_image', 'section_home_medicine'); ?>');">
                 </div>
