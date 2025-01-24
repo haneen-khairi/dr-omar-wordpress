@@ -25,6 +25,7 @@
 
     <div class="home__medicine__top container">
         <div class="row h-100 no-gutters">
+            <!-- Left Section -->
             <div class="home__medicine__pushTop home__medicine__pushTop--left col-md-12 col-xl-9 bg-beige p-r">
                 <div class="home__medicine__pushTopInner d-f fd-column h-100 p-r">
                     <h3 class="title-xl tt-u">
@@ -37,11 +38,15 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Left Image Section -->
             <div class="home__medicine__img col-md-8 md-up-d-none xl-up-d-b o-h p-r">
                 <div class="bg-cover absolute-full" data-kira-item="zoomOut"
                     style="background-image: url('<?php the_field('left_image', 'section_home_medicine'); ?>');">
                 </div>
             </div>
+
+            <!-- Right Section -->
             <div class="home__medicine__pushTop home__medicine__pushTop--right col-md-12 col-xl-7 h-100 bg-black c-white p-r">
                 <div class="bg-cover absolute-full" data-kira-item="zoomOut"
                     style="background-image: url('<?php the_field('right_image', 'section_home_medicine'); ?>');">
