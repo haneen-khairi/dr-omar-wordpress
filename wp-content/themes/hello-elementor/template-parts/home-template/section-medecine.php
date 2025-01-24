@@ -1,9 +1,14 @@
 <section class="home__medicine p-r o-h" data-kira-timeline>
     <div class="container ta-c">
         <h2 class="home__medicine__title title-xxl tt-u mb-md md-up-mb-xl">
-            <?php 
+            <?php
+            // Retrieve title field
             $title = get_field('title', 'section_home_medicine');
-            echo $title ? $title : 'Title not found'; 
+            if ($title) {
+                echo esc_html($title); // Display title if found
+            } else {
+                echo 'Title not found'; // Fallback if no title
+            }
             ?>
         </h2>
     </div>
@@ -32,7 +37,7 @@
             <div class="home__medicine__pushTop home__medicine__pushTop--left col-md-12 col-xl-9 bg-beige p-r">
                 <div class="home__medicine__pushTopInner d-f fd-column h-100 p-r">
                     <h3 class="title-xl tt-u">
-                        <?php echo get_field('left_title', 'section_home_medicine'); ?>
+                        <?php echo esc_html(get_field('left_title', 'section_home_medicine')); ?>
                     </h3>
                     <div class="mt-auto">
                         <a target="_blank" href="<?php echo esc_url(get_field('left_link', 'section_home_medicine')); ?>" class="btn">
