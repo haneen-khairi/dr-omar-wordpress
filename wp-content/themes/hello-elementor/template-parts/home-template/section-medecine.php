@@ -1,7 +1,14 @@
 <section class="home__medicine p-r o-h" data-kira-timeline>
     <div class="container ta-c">
         <h2 class="home__medicine__title title-xxl tt-u mb-md md-up-mb-xl">
-            <?php the_field('title', 'section_home_medicine'); ?>
+            <?php
+            $title = get_field('title', 'section_home_medicine');
+            if ($title) {
+                echo $title;
+            } else {
+                echo "Title not found";
+            }
+            ?>
         </h2>
     </div>
 
