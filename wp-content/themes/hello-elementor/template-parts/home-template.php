@@ -41,40 +41,7 @@ if (file_exists($custom_head_path)) {
       echo 'Custom home banner file not found!';
    }
    ?>
-   <?php
-   // Get the ACF field data
-   $title = get_field('title', 'option'); // Or get_field('title') if it's not global
-   $repeater_sentences = get_field('repeater_sentences', 'option'); // Same for 'repeater_sentences'
-   $left_title = get_field('left_title', 'option'); // Same for 'left_title'
-   $leftlink = get_field('leftlink', 'option'); // Same for 'leftlink'
-
-   // Output title
-   if ($title) {
-      echo '<h2>' . esc_html($title) . '</h2>';
-   }
-
-   // Loop through repeater sentences and words
-   if ($repeater_sentences) {
-      foreach ($repeater_sentences as $sentence) {
-         echo '<div class="marquee__sentence">';
-         if (!empty($sentence['repeater_words'])) {
-            foreach ($sentence['repeater_words'] as $word) {
-               echo '<span class="marquee__word">' . esc_html($word['word']) . '</span>';
-            }
-         }
-         echo '</div>';
-      }
-   }
-
-   // Output left title and link
-   if ($left_title) {
-      echo '<h3>' . esc_html($left_title) . '</h3>';
-   }
-   if ($leftlink) {
-      echo '<a href="' . esc_url($leftlink) . '" target="_blank">Discover</a>';
-   }
-   ?>
-
+   <h3>haneen</h3>
    <section class="home__blog">
       <div class="container">
          <h2 class="title-xxl tt-u ta-c mb-md md-up-mb-lg">
