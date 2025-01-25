@@ -42,6 +42,7 @@ if (file_exists($custom_head_path)) {
    }
    ?>
    <h3><?php get_field('home_title'); ?></h3>
+   <h3>haneen</h3>
    <section class="home__blog">
       <div class="container">
          <h2 class="title-xxl tt-u ta-c mb-md md-up-mb-lg">
